@@ -10,6 +10,7 @@ int limite_generaciones_pasado,numero_cromosomas_pasado;
 double probabilidad_de_mutacion = .80;
 int numero_cromosomas = 1000;
 int Velocidad = 500;
+Chart myChart;
 Textlabel myTextlabelA;
 Textlabel myTextlabelB;
 Knob myKnobA,myKnobB;
@@ -24,6 +25,19 @@ void preps()
   cp5 = new ControlP5(this);
   
   
+   
+   myChart = cp5.addChart("Grafica Fitness")
+               .setPosition(650, 110)
+               .setSize(130, 102)
+               .setRange(0, .3)
+               .setView(Chart.LINE) // use Chart.LINE, Chart.PIE, Chart.AREA, Chart.BAR_CENTERED
+               .setStrokeWeight(1.5)
+               .setColorCaptionLabel(color(255))
+               ;
+
+  myChart.addDataSet("incoming");
+  myChart.setData("incoming", new float[100]);
+   
    
     cp5.addSlider("mutacion")
       .setPosition(100,10)

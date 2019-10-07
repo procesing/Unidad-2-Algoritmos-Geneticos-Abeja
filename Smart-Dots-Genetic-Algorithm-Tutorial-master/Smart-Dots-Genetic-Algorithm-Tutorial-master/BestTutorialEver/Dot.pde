@@ -80,6 +80,7 @@ class Dot {
     } else {//if the dot didn't reach the goal then the fitness is based on how close it is to the goal
       float distanceToGoal = dist(pos.x, pos.y, goal.x, goal.y);
       fitness = 1.0/(distanceToGoal * distanceToGoal);
+      
     }
   }
 

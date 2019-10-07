@@ -136,7 +136,7 @@ class Population {
         maxIndex = i;
       }
     }
-
+  myChart.push("incoming",dots[maxIndex].fitness );
     bestDot = maxIndex;
 
     //if this dot reached the goal then reset the minimum number of steps it takes to get to the goal
