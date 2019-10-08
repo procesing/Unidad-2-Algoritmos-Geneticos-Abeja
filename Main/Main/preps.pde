@@ -20,7 +20,7 @@ void preps()
   mutacion = 0.01;
   mutacion_pasado = mutacion;
   N_Generacion = 1;
-  test = new Population(1000);//create a new population with 1000 members
+  test = new Population(1000);
   img= loadImage("colmena.png");
   cp5 = new ControlP5(this);
   
@@ -47,7 +47,8 @@ void preps()
    cp5.addSlider("numero_cromosomas")
       .setPosition(100,50)
       .setSize(100,30)
-     .setRange(10,1500)
+      .setValue(1000)
+      .setRange(10,1500)
      ;
      cp5.addSlider("limite_generaciones")
       .setPosition(100,90)
@@ -67,12 +68,12 @@ void preps()
                .setDragDirection(Knob.HORIZONTAL)
                ;
   
-  numero_Abejas_pasado= numero_Abejas;
+  numero_Abejas_pasado = numero_Abejas;
   
   
     myKnobB = cp5.addKnob("numero_Abejas")
                .setRange(1,1500)
-               .setValue(50)
+               .setValue(400)
                .setPosition(190,180)
                .setRadius(30)
                .setDragDirection(Knob.HORIZONTAL)

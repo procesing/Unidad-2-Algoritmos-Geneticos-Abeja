@@ -2,8 +2,8 @@
 import controlP5.*;
 
 void setup() {
-  size(800, 800); //size of the window
-  frameRate(Velocidad);//increase this to make the dots go faster
+  size(800, 800); 
+  frameRate(Velocidad);
   preps();              
 }
 void draw() { 
@@ -12,29 +12,28 @@ void draw() {
     numero_Abejas_pasado = numero_Abejas;
      numero_cromosomas_pasado = numero_cromosomas;
      mutacion_pasado = mutacion;
-     N_Generacion =0;
+     N_Generacion = 1;
     test = new Population(numero_Abejas*2);
   }
   frameRate(Velocidad);
   background(10);
-  //draw goal
   image(img, 360, 0); //colmena
   fill(0, 0, 0); 
   ellipse(goal.x, goal.y, 10, 10);
   
-  //draw obstacle(s)
+  //obstaculos
   fill(105, 61, 0);
-  rect(0, 300, 600, 10);//branch
+  rect(0, 300, 600, 10);
+  rect(200, 500, 600, 10);
   
   if(N_Generacion < limite_generaciones ){
   if (test.allDotsDead() ) {
-    //genetic algorithm
+    //Algoritmo genetico
     test.calculateFitness();
     test.naturalSelection();
     test.mutateDemBabies();
      N_Generacion ++;
   } else {
-    //if any of the dots are still alive then update and then show them
     test.update();
     test.show();
   }
